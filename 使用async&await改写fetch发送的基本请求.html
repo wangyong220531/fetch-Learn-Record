@@ -10,9 +10,13 @@
         <button onclick="getData()">点击</button>
         <script>
             const getData = async () => {
-                const res = await fetch("http://127.0.0.1:1010/test")
-                const json = await res.json()
-                console.log(json)
+                try {
+                    const res = await fetch("http://127.0.0.1:1010/test")
+                    const json = await res.json()
+                    console.log(json)
+                } catch (err) {
+                    console.log(err)
+                }
             }
         </script>
     </body>
