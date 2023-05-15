@@ -11,9 +11,19 @@
         <script>
             const getData = async () => {
                 try {
-                    const res = await fetch("http://127.0.0.1:1010/test")
+                    const obj = {
+                        name: "菜徐腾",
+                        role: "刺客"
+                    }
+                    const res = await fetch("http://127.0.0.1:1010/test", {
+                        method: "post",
+                        headers: {
+                            "Content-type": "application/json"
+                        },
+                        body: JSON.stringify(obj)
+                    })
                     const json = await res.json()
-                    console.log(json)
+                    console.log(res)
                 } catch (err) {
                     console.log(err)
                 }
